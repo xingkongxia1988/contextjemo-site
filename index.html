@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ContextJemo — The Semantic Layer for AI Work | Prompts that compound</title>
+<meta name="description" content="ContextJemo is the semantic layer for AI work. Your team's playbooks become executable files — declarative, verifiable, reusable. Cheaper models, predictable outcomes.">
+<meta name="theme-color" content="#060B11">
+<meta property="og:title" content="ContextJemo — The Semantic Layer for AI Work">
+<meta property="og:description" content="Your team's playbooks become executable files. Declarative, verifiable, reusable.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" href="assets/logo/cj-favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="zh-CN" href="/cn/">
+<link rel="alternate" hreflang="en" href="/">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="ContextJemo home">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 4 L28 16 L16 28 L4 16 Z" stroke="#DDA45C" stroke-width="1"/>
+        <path d="M16 10 L22 16 L16 22 L10 16 Z" stroke="#DDA45C" stroke-width="0.8" opacity="0.45"/>
+        <circle cx="16" cy="16" r="2" fill="#DDA45C"/>
+      </svg>
+      <span class="brand-name">ContextJemo<span>SHUOPU INTELLIGENCE</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#semantic-layer">Semantic Layer</a>
+      <a href="#files">The Files</a>
+      <a href="#blackbox">vs. Black Box</a>
+      <a href="#lifecycle">Lifecycle</a>
+      <a href="#open">Open Source</a>
+      <a class="nav-mobile-cta" href="#start">Get started →</a>
+    </nav>
+    <a class="nav-lang" href="/cn/" lang="zh-CN" hreflang="zh-CN" aria-label="中文版">中文</a>
+    <a class="nav-cta" href="#start">Get started</a>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow rv">Semantic layer for AI work · Apache-2.0 open source</div>
+      <h1 class="h-display rv rv-d1">Your team's playbook,<br>as a file the agent<br>actually <span class="hl">executes</span></h1>
+      <p class="hero-sub rv rv-d2">
+        Prompts are read. Playbooks are executed. ContextJemo turns the way your team
+        actually works into declarative files — <strong style="color:var(--text-2)">AET tactics</strong>
+        and <strong style="color:var(--text-2)">kernel MD</strong> — that agents run, humans review,
+        and git tracks. Cheap models become enough, because the structure carries the intelligence.
+      </p>
+      <div class="hero-actions rv rv-d3">
+        <a class="btn btn--solid" href="#start">
+          Get started
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#files">See the files</a>
+        <a class="btn btn--ghost" href="https://github.com/xingkongxia1988/contextjemo">GitHub</a>
+      </div>
+      <div class="hero-note rv rv-d3">
+        <span class="trace">#CTX-001</span>
+        <span class="small">One paper, one demo — turn a playbook into a working demo, instantly.</span>
+      </div>
+    </div>
+
+    <!-- 真实产物：AET YAML 片段 -->
+    <div class="rv rv-d2">
+      <div class="art">
+        <div class="art-head">
+          <div class="art-dots"><i></i><i></i><i></i></div>
+          <span class="art-path">tactics/saas-pricing-monitor.aet.yaml</span>
+        </div>
+        <div class="art-body">
+<pre><span class="c"># A real tactic — steps are prompts, not code</span>
+<span class="k">schema_version</span>: <span class="v">"0.2"</span>
+<span class="k">aet</span>:
+  <span class="k">id</span>: <span class="v">saas-pricing-monitor</span>
+  <span class="k">version</span>: <span class="v">0.1.0</span>
+  <span class="k">steps</span>:
+    - <span class="k">id</span>: <span class="v">s2</span>
+      <span class="k">name</span>: <span class="v">对比历史快照，检测定价结构变化</span>
+      <span class="k">instruction</span>: <span class="v">&gt;</span>
+        读取最新两个快照文件，逐一 diff…
+      <span class="k">agent_requirements</span>: <span class="v">[data-processing, analysis]</span>
+      <span class="k">depends_on</span>: <span class="v">[s1]</span>
+      <span class="k">checkpoint</span>:
+        <span class="k">success_criteria</span>: <span class="v">&gt;</span>
+          diff 报告生成；changed_vendors 为空时标记"无变化"</pre>
+        </div>
+        <div class="art-foot">
+          <span class="small mono">AET · Agent Execute Tactics</span>
+          <span class="trace">#AET-2.2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 语义层 ================= -->
+<section class="section bg-2 section--line" id="semantic-layer">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow rv">01 · The semantic layer</div>
+      <h2 class="h2 rv rv-d1">Three properties that make<br>playbooks into assets</h2>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar rv">
+        <div class="num">01 / DEPOSITED</div>
+        <h3>Semantic deposits</h3>
+        <p>
+          A tactic is a file, not a chat log. It lands in git, diffs like code,
+          rolls back like code. A teammate can read what your agent was told to do
+          — and why — without asking you.
+        </p>
+        <span class="trace">#CHARTER-03.7</span>
+      </div>
+      <div class="pillar rv rv-d1">
+        <div class="num">02 / REPLICABLE</div>
+        <h3>Semantics replicate</h3>
+        <p>
+          One tactic, many agents. The same declarative file drives different models
+          and different platforms. When you improve the playbook, every consumer
+          inherits the fix — the improvement is not re-explained.
+        </p>
+        <span class="trace">#BRIEF-1.3</span>
+      </div>
+      <div class="pillar rv rv-d2">
+        <div class="num">03 / AI-IZED</div>
+        <h3>The layer becomes AI</h3>
+        <p>
+          The semantic layer is not static documentation. Agents read it, execute against it,
+          and write back to it: <span class="mono" style="color:var(--text-2)">update_kernel</span>
+          evolves the kernel; cross-model verification gates the result. The layer improves
+          because it is used, not because someone maintains a wiki.
+        </p>
+        <span class="trace">#SPEC-1.0</span>
+      </div>
+    </div>
+
+    <div class="chips">
+      <span class="chip">declarative</span>
+      <span class="chip">git-diffable</span>
+      <span class="chip">verifiable</span>
+      <span class="chip">self-evolving</span>
+      <span class="chip">model-agnostic</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 文件形态 ================= -->
+<section class="section" id="files">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow rv">02 · The files</div>
+        <h2 class="h2 rv rv-d1" style="margin-top:20px">Two artifacts.<br>Both plain text.</h2>
+        <p class="lead rv rv-d2" style="margin-top:24px">
+          Everything in ContextJemo is a prompt — at three levels of structure.
+          The kernel holds what must never change. The AET tactic holds what to do.
+          The prompt template holds the smallest reusable unit.
+        </p>
+        <div class="pcards pcards--duo" style="margin-top:40px">
+          <div class="pcard rv">
+            <div class="kicker">Kernel · MD</div>
+            <h3>Values &amp; red lines</h3>
+            <p>
+              ≤ 90 lines, hard budget. Axioms, self-cognition, bottom lines.
+              A validator rejects it if it overruns — attention is a scarce resource,
+              and restraint is a capability.
+            </p>
+            <span class="trace">#CHARTER-03.3</span>
+          </div>
+          <div class="pcard rv rv-d1">
+            <div class="kicker">AET · YAML</div>
+            <h3>Steps &amp; checkpoints</h3>
+            <p>
+              1–20 steps. Each step is a natural-language instruction with a machine-checkable
+              success criterion. You declare what "done" means; the runtime decides how to get there.
+            </p>
+            <span class="trace">#SPEC-2.1</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv rv-d2">
+        <div class="art">
+          <div class="art-head">
+            <div class="art-dots"><i></i><i></i><i></i></div>
+            <span class="art-path">kernel.md — five sections, ≤90 lines</span>
+          </div>
+          <div class="art-body">
+<pre><span class="c">### 四、红线规则（Bottom Line）</span>
+
+| 红线 | 触发动作 |
+|------|---------|
+| <span class="w">R1：无来源结论</span> | 结论不写入报告，改为「待核」标注 |
+| <span class="w">R2：营销内容当事实</span> | 降级为「参考」，注明来源性质 |
+| <span class="w">R3：超出知识截止日期</span> | 标注「数据可能过时」 |
+| <span class="w">R4：单一来源支撑关键结论</span> | 强制要求第二来源印证 |
+| <span class="w">R5：预算超支</span>（>80%）| 停止深度检索</pre>
+          </div>
+          <div class="art-foot">
+            <span class="small mono">Real kernel — researcher-kernel.md</span>
+            <span class="trace">#KERNEL-R1..R5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 声明式 vs 黑盒 ================= -->
+<section class="section sheet" id="blackbox">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow rv">03 · The position</div>
+      <h2 class="h2 rv rv-d1">Black box makes you believe it.<br>Declarative makes you see it.</h2>
+    </div>
+    <p class="lede-note rv rv-d2" style="max-width:46em">
+      Mainstream agent orchestration is a black box: you hand over a task, and how it
+      scheduled, how many tokens it burned, what each step produced — none of it is visible.
+      ContextJemo takes the opposite road.
+    </p>
+
+    <div class="tbl-wrap rv rv-d3" style="margin-top:40px">
+      <table class="tbl">
+        <thead>
+          <tr><th>Dimension</th><th>Black-box agent orchestration</th><th>ContextJemo declarative</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Scheduling logic</td><td>Hidden in the engine, invisible</td><td class="ours">AET YAML, in plain sight — you define who and in what order</td></tr>
+          <tr><td>Each step's output</td><td>Invisible</td><td class="ours">Visible and costed, per step</td></tr>
+          <tr><td>Where experience accumulates</td><td>Scattered across chat logs</td><td class="ours">In git — diffable, shareable, compounding</td></tr>
+          <tr><td>Control</td><td>Handed to the engine</td><td class="ours">Kept by you — edit the YAML, you edit the behaviour</td></tr>
+          <tr><td>Iteration</td><td>Waiting on a vendor release</td><td class="ours">Yours — change one line, run once, see the effect</td></tr>
+          <tr><td>When it breaks</td><td>You don't know which step died</td><td class="ours">Machine-judged checkpoints point straight at it</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hero-note rv" style="margin-top:28px">
+      <span class="trace">#VALUE-02</span>
+      <span class="small">Predictability is the precondition for an asset to be worth anything.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 生命周期 ================= -->
+<section class="section" id="lifecycle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow rv">04 · The lifecycle</div>
+      <h2 class="h2 rv rv-d1">Say → make → try → use → grow</h2>
+      <p class="lead rv rv-d2" style="margin-top:20px;max-width:40em">
+        One Paper: a playbook's full life, from a sentence of intent to an asset that
+        compounds. The demo is not a throwaway — it is the fuel the asset is refined with.
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step rv"><div class="n">01</div><h4>Say</h4><p>Describe the outcome in one sentence. No interrogation, no three-question intake.</p></div>
+      <div class="step rv rv-d1"><div class="n">02</div><h4>Make</h4><p>The co-creation brain drafts the tactic immediately. Open questions are marked inline, not asked back.</p></div>
+      <div class="step rv rv-d2"><div class="n">03</div><h4>Try</h4><p>Rehearsal with visible outputs and visible cost. Missing inputs are labelled honestly, never invented.</p></div>
+      <div class="step rv rv-d3"><div class="n">04</div><h4>Use</h4><p>The tactic lands in the library as YAML — versioned, shareable, runnable by any agent.</p></div>
+      <div class="step rv"><div class="n">05</div><h4>Grow</h4><p>Run data and human confirmations feed back. The asset sharpens with every confirmed run.</p></div>
+    </div>
+
+    <div class="hero-note rv" style="margin-top:36px">
+      <span class="trace">#CHARTER-04</span>
+      <span class="small">Confirmation is the asset: what, on what evidence, what was decided, what happened, who signed.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 开源 ================= -->
+<section class="section bg-2 section--line" id="open">
+  <div class="wrap">
+    <div class="split split--rev">
+      <div>
+        <div class="eyebrow rv">05 · Open source</div>
+        <h2 class="h2 rv rv-d1" style="margin-top:20px">Files first.<br>Platform second.</h2>
+        <p class="lead rv rv-d2" style="margin-top:24px">
+          The repository is Apache-2.0. The formats are documented. AET spec v1.0 is
+          frozen — and the triggers for independently open-sourcing it are written down,
+          not aspirational.
+        </p>
+        <div class="cta-actions rv rv-d3">
+          <a class="btn btn--solid" href="https://github.com/xingkongxia1988/contextjemo">
+            View on GitHub
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#start">Install locally</a>
+        </div>
+        <div class="hero-note rv rv-d3">
+          <span class="trace">#SCOPE-OPEN</span>
+          <span class="small">This repository is prototype-grade. A working prototype is not traction.</span>
+        </div>
+      </div>
+
+      <div class="rv rv-d2">
+        <div class="art">
+          <div class="art-head">
+            <div class="art-dots"><i></i><i></i><i></i></div>
+            <span class="art-path">quick start</span>
+          </div>
+          <div class="art-body">
+<pre><span class="c"># Node ≥ 22</span>
+<span class="k">git clone</span> <span class="v">https://github.com/xingkongxia1988/contextjemo</span>
+<span class="k">cd</span> contextjemo &amp;&amp; <span class="k">pnpm install</span>
+
+<span class="c"># conversational mode — just say what you want</span>
+<span class="k">npm run</span> <span class="v">chat</span>
+
+<span class="c"># › /run   → s1 ✓ 13.5s   s2 ✓ 7.5s</span>
+<span class="c"># › /save  → ✓ saved ./tactics/your-tactic.aet.yaml</span></pre>
+          </div>
+          <div class="art-foot">
+            <span class="small mono">No API key required to try</span>
+            <span class="trace">#README-QS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta" id="start">
+  <div class="wrap">
+    <div class="eyebrow rv">Start here</div>
+    <h2 class="h2 rv rv-d1" style="margin-top:20px">Bring one real workflow.<br>We'll show you its ledger.</h2>
+    <p class="lede-note rv rv-d2">
+      No slides, no discovery workshop. Bring a task your team already does by hand —
+      we'll turn it into a tactic and show you what it costs, step by step.
+    </p>
+    <div class="cta-actions rv rv-d3">
+      <a class="btn btn--solid" href="https://github.com/xingkongxia1988/contextjemo">
+        Get the code
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="https://xingkongxia1988.github.io/shuopu-site/">Company site</a>
+      <a class="btn btn--ghost" href="mailto:wenlongcui@hotmail.com">wenlongcui@hotmail.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="./">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 4 L28 16 L16 28 L4 16 Z" stroke="#DDA45C" stroke-width="1"/>
+            <path d="M16 10 L22 16 L16 22 L10 16 Z" stroke="#DDA45C" stroke-width="0.8" opacity="0.45"/>
+            <circle cx="16" cy="16" r="2" fill="#DDA45C"/>
+          </svg>
+          <span class="brand-name">ContextJemo<span>SHUOPU INTELLIGENCE</span></span>
+        </a>
+        <p>Prompts that compound. The semantic layer for AI work — declarative, verifiable, reusable.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Product</h5>
+        <a href="#semantic-layer">Semantic layer</a>
+        <a href="#files">The files</a>
+        <a href="#lifecycle">Lifecycle</a>
+        <a href="#open">Open source</a>
+      </div>
+      <div class="foot-col">
+        <h5>Company</h5>
+        <a href="https://xingkongxia1988.github.io/shuopu-site/">SHUOPU Intelligence</a>
+        <a href="https://github.com/xingkongxia1988/contextjemo">GitHub</a>
+        <a href="/cn/" lang="zh-CN" hreflang="zh-CN">中文站</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="mailto:wenlongcui@hotmail.com">wenlongcui@hotmail.com</a>
+        <a href="tel:18666023056">+86 186 6602 3056</a>
+        <span style="color:var(--muted)">Guangzhou, China</span>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 SHUOPU INTELLIGENCE</span>
+      <span>MEANING FIRST · TRUST BEFORE CONTRACT</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+</body>
+</html>

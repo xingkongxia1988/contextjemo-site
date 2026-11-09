@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="ContextJemo">
+  <title>ContextJemo</title>
+  <rect width="64" height="64" rx="14" fill="#060B11"/>
+  <g transform="translate(32 32) scale(0.74) translate(-32 -32)" fill="none" stroke="#DDA45C" stroke-width="1.6">
+    <path d="M16 4 L28 16 L16 28 L4 16 Z"/>
+    <path d="M16 10 L22 16 L16 22 L10 16 Z" stroke-width="1.2" opacity="0.45"/>
+  </g>
+  <circle cx="32" cy="32" r="2.6" fill="#DDA45C"/>
+</svg>

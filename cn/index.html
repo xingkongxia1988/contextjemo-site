@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ContextJemo — AI 工作的语义层 | 会复利的提示词</title>
+<meta name="description" content="ContextJemo 是 AI 工作的语义层。把团队的打法变成 Agent 真正执行的可执行文件——声明式、可验证、可复制。便宜模型就够。">
+<meta name="theme-color" content="#060B11">
+<meta property="og:title" content="ContextJemo — AI 工作的语义层">
+<meta property="og:description" content="把团队的打法变成 Agent 真正执行的可执行文件。">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="../assets/css/site.css">
+<link rel="icon" href="../assets/logo/cj-favicon.svg" type="image/svg+xml">
+<link rel="alternate" hreflang="zh-CN" href="/cn/">
+<link rel="alternate" hreflang="en" href="/">
+</head>
+<body>
+
+<a class="skip" href="#main">跳到主要内容</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="ContextJemo 首页">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 4 L28 16 L16 28 L4 16 Z" stroke="#DDA45C" stroke-width="1"/>
+        <path d="M16 10 L22 16 L16 22 L10 16 Z" stroke="#DDA45C" stroke-width="0.8" opacity="0.45"/>
+        <circle cx="16" cy="16" r="2" fill="#DDA45C"/>
+      </svg>
+      <span class="brand-name">ContextJemo<span>SHUOPU INTELLIGENCE</span></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#semantic-layer">语义层</a>
+      <a href="#files">两种文件</a>
+      <a href="#blackbox">对比黑盒</a>
+      <a href="#lifecycle">生命周期</a>
+      <a href="#open">开源</a>
+      <a class="nav-mobile-cta" href="#start">开始使用 →</a>
+    </nav>
+    <a class="nav-lang" href="../" lang="en" hreflang="en" aria-label="English version">EN</a>
+    <a class="nav-cta" href="#start">开始使用</a>
+    <button class="burger" aria-label="菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow rv">AI 工作的语义层 · Apache-2.0 开源</div>
+      <h1 class="h-display rv rv-d1">团队的打法，<br>变成 Agent <span class="hl">真正执行</span><br>的那份文件</h1>
+      <p class="hero-sub rv rv-d2">
+        提示词是被读取的，打法是被执行的。ContextJemo 把团队实际的工作方式，
+        变成 Agent 会跑、人能审、git 能追的声明式文件——
+        <strong style="color:var(--text-2)">AET 战术文件</strong>与
+        <strong style="color:var(--text-2)">内核 MD</strong>。
+        靠结构而非模型强度，便宜模型就够用。
+      </p>
+      <div class="hero-actions rv rv-d3">
+        <a class="btn btn--solid" href="#start">
+          开始使用
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+        </a>
+        <a class="btn btn--ghost" href="#files">看文件长什么样</a>
+        <a class="btn btn--ghost" href="https://github.com/xingkongxia1988/contextjemo">GitHub</a>
+      </div>
+      <div class="hero-note rv rv-d3">
+        <span class="trace">#CTX-001</span>
+        <span class="small">一份打法，闪出 Demo——把打法变成可运行的 Demo，即刻可见。</span>
+      </div>
+    </div>
+
+    <!-- 真实产物：AET YAML 片段 -->
+    <div class="rv rv-d2">
+      <div class="art">
+        <div class="art-head">
+          <div class="art-dots"><i></i><i></i><i></i></div>
+          <span class="art-path">tactics/saas-pricing-monitor.aet.yaml</span>
+        </div>
+        <div class="art-body">
+<pre><span class="c"># 真实战术文件——步骤是提示词，不是代码</span>
+<span class="k">schema_version</span>: <span class="v">"0.2"</span>
+<span class="k">aet</span>:
+  <span class="k">id</span>: <span class="v">saas-pricing-monitor</span>
+  <span class="k">version</span>: <span class="v">0.1.0</span>
+  <span class="k">steps</span>:
+    - <span class="k">id</span>: <span class="v">s2</span>
+      <span class="k">name</span>: <span class="v">对比历史快照，检测定价结构变化</span>
+      <span class="k">instruction</span>: <span class="v">&gt;</span>
+        读取最新两个快照文件，逐一 diff…
+      <span class="k">agent_requirements</span>: <span class="v">[data-processing, analysis]</span>
+      <span class="k">depends_on</span>: <span class="v">[s1]</span>
+      <span class="k">checkpoint</span>:
+        <span class="k">success_criteria</span>: <span class="v">&gt;</span>
+          diff 报告生成；changed_vendors 为空时标记"无变化"</pre>
+        </div>
+        <div class="art-foot">
+          <span class="small mono">AET · Agent Execute Tactics</span>
+          <span class="trace">#AET-2.2</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 语义层 ================= -->
+<section class="section bg-2 section--line" id="semantic-layer">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow rv">01 · 语义层</div>
+      <h2 class="h2 rv rv-d1">让打法成为资产的<br>三个性质</h2>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar rv">
+        <div class="num">01 / 可沉淀</div>
+        <h3>语义沉淀下来</h3>
+        <p>
+          战术是文件，不是聊天记录。它落在 git 里，像代码一样 diff、
+          像代码一样回滚。同事不用问你，就能读到 Agent 被交代了什么、
+          以及为什么。
+        </p>
+        <span class="trace">#CHARTER-03.7</span>
+      </div>
+      <div class="pillar rv rv-d1">
+        <div class="num">02 / 可复制</div>
+        <h3>语义被复制出去</h3>
+        <p>
+          一个战术，很多 Agent 用。同一份声明式文件，可以驱动不同模型、
+          不同平台。改好一次打法，所有使用者一起继承这次改进——
+          改进不需要再解释一遍。
+        </p>
+        <span class="trace">#BRIEF-1.3</span>
+      </div>
+      <div class="pillar rv rv-d2">
+        <div class="num">03 / AI 化</div>
+        <h3>语义层自己长出 AI</h3>
+        <p>
+          语义层不是静态文档。Agent 读它、照它执行、再写回它：
+          <span class="mono" style="color:var(--text-2)">update_kernel</span> 让内核随运行进化，
+          跨模型核验为结果把关。这一层因为被使用而变好，
+          而不是因为有人维护 wiki。
+        </p>
+        <span class="trace">#SPEC-1.0</span>
+      </div>
+    </div>
+
+    <div class="chips">
+      <span class="chip">声明式</span>
+      <span class="chip">git 可 diff</span>
+      <span class="chip">可验证</span>
+      <span class="chip">自我进化</span>
+      <span class="chip">模型无关</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 文件形态 ================= -->
+<section class="section" id="files">
+  <div class="wrap">
+    <div class="split">
+      <div>
+        <div class="eyebrow rv">02 · 两种文件</div>
+        <h2 class="h2 rv rv-d1" style="margin-top:20px">两份产物。<br>都是纯文本。</h2>
+        <p class="lead rv rv-d2" style="margin-top:24px">
+          ContextJemo 里的一切都是提示词，只是结构分三层：
+          内核装的是绝不能变的东西，AET 战术装的是要做什么，
+          提示词模板是最小的可复用单元。
+        </p>
+        <div class="pcards pcards--duo" style="margin-top:40px">
+          <div class="pcard rv">
+            <div class="kicker">内核 · MD</div>
+            <h3>价值观与红线</h3>
+            <p>
+              ≤ 90 行硬预算。公理、自我认知、红线各归其位。
+              超预算校验器直接拒绝——注意力是稀缺资源，克制本身就是能力。
+            </p>
+            <span class="trace">#CHARTER-03.3</span>
+          </div>
+          <div class="pcard rv rv-d1">
+            <div class="kicker">AET · YAML</div>
+            <h3>步骤与验收</h3>
+            <p>
+              1–20 步。每一步都是自然语言指令，配一条可机判的验收标准。
+              你声明「什么算完成」，运行时决定怎么做到。
+            </p>
+            <span class="trace">#SPEC-2.1</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="rv rv-d2">
+        <div class="art">
+          <div class="art-head">
+            <div class="art-dots"><i></i><i></i><i></i></div>
+            <span class="art-path">kernel.md — 五段结构，≤90 行</span>
+          </div>
+          <div class="art-body">
+<pre><span class="c">### 四、红线规则（Bottom Line）</span>
+
+| 红线 | 触发动作 |
+|------|---------|
+| <span class="w">R1：无来源结论</span> | 结论不写入报告，改为「待核」标注 |
+| <span class="w">R2：营销内容当事实</span> | 降级为「参考」，注明来源性质 |
+| <span class="w">R3：超出知识截止日期</span> | 标注「数据可能过时」 |
+| <span class="w">R4：单一来源支撑关键结论</span> | 强制要求第二来源印证 |
+| <span class="w">R5：预算超支</span>（>80%）| 停止深度检索</pre>
+          </div>
+          <div class="art-foot">
+            <span class="small mono">真实内核 — researcher-kernel.md</span>
+            <span class="trace">#KERNEL-R1..R5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 声明式 vs 黑盒 ================= -->
+<section class="section sheet" id="blackbox">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow rv">03 · 我们的立场</div>
+      <h2 class="h2 rv rv-d1">黑盒让你「相信」它，<br>声明式让你「看见」它。</h2>
+    </div>
+    <p class="lede-note rv rv-d2" style="max-width:46em">
+      主流 Agent 编排是黑盒：你把任务丢进去，它内部怎么调度、灌了多少词、
+      烧了多少 token、每一步产出什么——全都看不见。ContextJemo 走相反的一条路。
+    </p>
+
+    <div class="tbl-wrap rv rv-d3" style="margin-top:40px">
+      <table class="tbl">
+        <thead>
+          <tr><th>维度</th><th>黑盒 Agent 编排</th><th>ContextJemo 声明式编排</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>调度逻辑</td><td>藏在引擎里，不可见</td><td class="ours">AET YAML 白纸黑字——你定义调谁、按什么顺序</td></tr>
+          <tr><td>每一步产出</td><td>不可见</td><td class="ours">每步产出可见、成本可见</td></tr>
+          <tr><td>经验沉淀在哪</td><td>散在聊天记录里</td><td class="ours">在 git 里——可 diff、可分享、可复利</td></tr>
+          <tr><td>掌控权</td><td>交给引擎</td><td class="ours">握在你手里——改 YAML 就改行为</td></tr>
+          <tr><td>迭代方式</td><td>等厂商升级</td><td class="ours">自己迭代——改一处跑一次立刻见效</td></tr>
+          <tr><td>哪一步崩了</td><td>不知道</td><td class="ours">checkpoint 机判，一目了然</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="hero-note rv" style="margin-top:28px">
+      <span class="trace">#VALUE-02</span>
+      <span class="small">可预期，才是资产的前提。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 生命周期 ================= -->
+<section class="section" id="lifecycle">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow rv">04 · 生命周期</div>
+      <h2 class="h2 rv rv-d1">说 → 成 → 试 → 用 → 长</h2>
+      <p class="lead rv rv-d2" style="margin-top:20px;max-width:40em">
+        One Paper：一份打法的完整一生，从一句话意图，到能复利的资产。
+        Demo 不是弃子，是打法的燃料——资产是被这些燃料淬炼出来的。
+      </p>
+    </div>
+
+    <div class="steps">
+      <div class="step rv"><div class="n">01</div><h4>说</h4><p>一句话描述成果。不追问、不做需求三连问。</p></div>
+      <div class="step rv rv-d1"><div class="n">02</div><h4>成</h4><p>共创大脑直接出草稿，待确认项在文件内标注，你改哪句点哪句。</p></div>
+      <div class="step rv rv-d2"><div class="n">03</div><h4>试</h4><p>试演产出可见、成本可见——缺输入时诚实标注，禁止编造。</p></div>
+      <div class="step rv rv-d3"><div class="n">04</div><h4>用</h4><p>打法落盘为 YAML 入库——可版本化、可分享、任何 Agent 都能跑。</p></div>
+      <div class="step rv"><div class="n">05</div><h4>长</h4><p>运行数据与人工确认回灌资产，每次被确认的运行都让它更准。</p></div>
+    </div>
+
+    <div class="hero-note rv" style="margin-top:36px">
+      <span class="trace">#CHARTER-04</span>
+      <span class="small">确认即资产：确认了什么、依据什么、拍板什么、结果如何、谁签的字。</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 开源 ================= -->
+<section class="section bg-2 section--line" id="open">
+  <div class="wrap">
+    <div class="split split--rev">
+      <div>
+        <div class="eyebrow rv">05 · 开源</div>
+        <h2 class="h2 rv rv-d1" style="margin-top:20px">先有文件，<br>再有平台。</h2>
+        <p class="lead rv rv-d2" style="margin-top:24px">
+          仓库是 Apache-2.0。格式有文档。AET spec v1.0 已冻结，
+          而「何时独立开源」的触发条件是写下来的条款，不是 aspiration。
+        </p>
+        <div class="cta-actions rv rv-d3">
+          <a class="btn btn--solid" href="https://github.com/xingkongxia1988/contextjemo">
+            去看 GitHub
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#start">本地装一个</a>
+        </div>
+        <div class="hero-note rv rv-d3">
+          <span class="trace">#SCOPE-OPEN</span>
+          <span class="small">本仓库为原型级能力——原型跑通了，不等于有 traction。</span>
+        </div>
+      </div>
+
+      <div class="rv rv-d2">
+        <div class="art">
+          <div class="art-head">
+            <div class="art-dots"><i></i><i></i><i></i></div>
+            <span class="art-path">快速开始</span>
+          </div>
+          <div class="art-body">
+<pre><span class="c"># Node ≥ 22</span>
+<span class="k">git clone</span> <span class="v">https://github.com/xingkongxia1988/contextjemo</span>
+<span class="k">cd</span> contextjemo &amp;&amp; <span class="k">pnpm install</span>
+
+<span class="c"># 对话模式——说人话就行</span>
+<span class="k">npm run</span> <span class="v">chat</span>
+
+<span class="c"># › /run   → s1 ✓ 13.5s   s2 ✓ 7.5s</span>
+<span class="c"># › /save  → ✓ saved ./tactics/your-tactic.aet.yaml</span></pre>
+          </div>
+          <div class="art-foot">
+            <span class="small mono">无 API Key 也能先跑通</span>
+            <span class="trace">#README-QS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="cta" id="start">
+  <div class="wrap">
+    <div class="eyebrow rv">从这里开始</div>
+    <h2 class="h2 rv rv-d1" style="margin-top:20px">带一条真实工作流来，<br>我们把它的账算给你看。</h2>
+    <p class="lede-note rv rv-d2">
+      不讲 PPT，不做诊断工作坊。带一件你们团队现在正在手工做的事来——
+      我们把它变成一份战术，逐步给你看它的成本。
+    </p>
+    <div class="cta-actions rv rv-d3">
+      <a class="btn btn--solid" href="https://github.com/xingkongxia1988/contextjemo">
+        拿走代码
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="https://xingkongxia1988.github.io/shuopu-site/">公司官网</a>
+      <a class="btn btn--ghost" href="mailto:wenlongcui@hotmail.com">wenlongcui@hotmail.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="./">
+          <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path d="M16 4 L28 16 L16 28 L4 16 Z" stroke="#DDA45C" stroke-width="1"/>
+            <path d="M16 10 L22 16 L16 22 L10 16 Z" stroke="#DDA45C" stroke-width="0.8" opacity="0.45"/>
+            <circle cx="16" cy="16" r="2" fill="#DDA45C"/>
+          </svg>
+          <span class="brand-name">ContextJemo<span>SHUOPU INTELLIGENCE</span></span>
+        </a>
+        <p>会复利的提示词。AI 工作的语义层——声明式、可验证、可复制。</p>
+      </div>
+      <div class="foot-col">
+        <h5>产品</h5>
+        <a href="#semantic-layer">语义层</a>
+        <a href="#files">两种文件</a>
+        <a href="#lifecycle">生命周期</a>
+        <a href="#open">开源</a>
+      </div>
+      <div class="foot-col">
+        <h5>公司</h5>
+        <a href="https://xingkongxia1988.github.io/shuopu-site/">烁普智能官网</a>
+        <a href="https://github.com/xingkongxia1988/contextjemo">GitHub</a>
+        <a href="../" lang="en" hreflang="en">English site</a>
+      </div>
+      <div class="foot-col">
+        <h5>联系</h5>
+        <a href="mailto:wenlongcui@hotmail.com">wenlongcui@hotmail.com</a>
+        <a href="tel:18666023056">+86 186 6602 3056</a>
+        <span style="color:var(--muted)">中国 · 广州</span>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© 2026 烁普智能 SHUOPU INTELLIGENCE</span>
+      <span>MEANING FIRST · TRUST BEFORE CONTRACT</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/js/site.js"></script>
+</body>
+</html>
