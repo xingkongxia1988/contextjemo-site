@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ContextJemo — The Semantic Layer for AI Work | Prompts that compound</title>
-<meta name="description" content="ContextJemo is the semantic layer for AI work. Your team's playbooks become executable files — declarative, verifiable, reusable. Cheaper models, predictable outcomes.">
+<meta name="description" content="ContextJemo is the semantic layer for AI work. Your team's playbooks become executable files — declarative, verifiable, reusable. Executable structure, checkable outcomes.">
 <meta name="theme-color" content="#060B11">
 <meta property="og:title" content="ContextJemo — The Semantic Layer for AI Work">
 <meta property="og:description" content="Your team's playbooks become executable files. Declarative, verifiable, reusable.">
@@ -29,7 +29,7 @@
       <a href="#files">The Files</a>
       <a href="#blackbox">vs. Black Box</a>
       <a href="#lifecycle">Lifecycle</a>
-      <a href="#open">Open Source</a>
+      <a href="#open">Open Boundary</a>
       <a class="nav-mobile-cta" href="#start">Get started →</a>
     </nav>
     <a class="nav-lang" href="/cn/" lang="zh-CN" hreflang="zh-CN" aria-label="中文版">中文</a>
@@ -44,13 +44,13 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow rv">Semantic layer for AI work · Apache-2.0 open source</div>
+      <div class="eyebrow rv">The semantic layer for AI work · The open format, the complete runtime</div>
       <h1 class="h-display rv rv-d1">Your team's playbook,<br>as a file the agent<br>actually <span class="hl">executes</span></h1>
       <p class="hero-sub rv rv-d2">
         Prompts are read. Playbooks are executed. ContextJemo turns the way your team
         actually works into declarative files — <strong style="color:var(--text-2)">AET tactics</strong>
         and <strong style="color:var(--text-2)">kernel MD</strong> — that agents run, humans review,
-        and git tracks. Cheap models become enough, because the structure carries the intelligence.
+        and git tracks. The value sits in the structure, not in model strength: the same file runs the same way, and every run can be checked.
       </p>
       <div class="hero-actions rv rv-d3">
         <a class="btn btn--solid" href="#start">
@@ -58,7 +58,7 @@
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
         </a>
         <a class="btn btn--ghost" href="#files">See the files</a>
-        <a class="btn btn--ghost" href="https://github.com/xingkongxia1988/contextjemo">GitHub</a>
+        <a class="btn btn--ghost" href="#open">Open Boundary</a>
       </div>
       <div class="hero-note rv rv-d3">
         <span class="trace">#CTX-001</span>
@@ -281,23 +281,24 @@
   <div class="wrap">
     <div class="split split--rev">
       <div>
-        <div class="eyebrow rv">05 · Open source</div>
-        <h2 class="h2 rv rv-d1" style="margin-top:20px">Files first.<br>Platform second.</h2>
+        <div class="eyebrow rv">05 · Open Boundary</div>
+        <h2 class="h2 rv rv-d1" style="margin-top:20px">The format is open.<br>The runtime is complete.</h2>
         <p class="lead rv rv-d2" style="margin-top:24px">
-          The repository is Apache-2.0. The formats are documented. AET spec v1.0 is
-          frozen — and the triggers for independently open-sourcing it are written down,
-          not aspirational.
+          AET spec v1.0 is frozen but <strong style="color:var(--text)">not yet independently
+          open-sourced</strong> — the triggers live in §6 of the spec: clauses, not adjectives.
+          We do not open-source everything: the layer you can build on becomes public; the
+          layer you run on ships as the complete edition.
         </p>
         <div class="cta-actions rv rv-d3">
-          <a class="btn btn--solid" href="https://github.com/xingkongxia1988/contextjemo">
-            View on GitHub
+          <a class="btn btn--solid" href="mailto:contact@contextjemo.com?subject=ContextJemo%20complete%20edition">
+            Request the complete edition
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
           </a>
-          <a class="btn btn--ghost" href="#start">Install locally</a>
+          <a class="btn btn--ghost" href="#files">See the files</a>
         </div>
         <div class="hero-note rv rv-d3">
-          <span class="trace">#SCOPE-OPEN</span>
-          <span class="small">This repository is prototype-grade. A working prototype is not traction.</span>
+          <span class="trace">#CTX-BOUNDARY</span>
+          <span class="small">A boundary written down is the only kind of trust. The open layer ships on the clause schedule; the runtime ships as the complete edition.</span>
         </div>
       </div>
 
@@ -305,22 +306,20 @@
         <div class="art">
           <div class="art-head">
             <div class="art-dots"><i></i><i></i><i></i></div>
-            <span class="art-path">quick start</span>
+            <span class="art-path">access paths</span>
           </div>
           <div class="art-body">
-<pre><span class="c"># Node ≥ 22</span>
-<span class="k">git clone</span> <span class="v">https://github.com/xingkongxia1988/contextjemo</span>
-<span class="k">cd</span> contextjemo &amp;&amp; <span class="k">pnpm install</span>
+<pre><span class="c"># open layer · Apache-2.0 (standalone repo, in progress)</span>
+<span class="k">spec</span> <span class="k">schema</span> <span class="k">parser &amp; validator</span> <span class="k">lint</span> <span class="k">templates</span>
 
-<span class="c"># conversational mode — just say what you want</span>
-<span class="k">npm run</span> <span class="v">chat</span>
+<span class="c"># complete edition · commercial license / on-prem</span>
+<span class="k">orchestration</span> <span class="k">gates</span> <span class="k">audit</span> <span class="k">memory</span> <span class="k">cost routing</span> <span class="k">Studio</span>
 
-<span class="c"># › /run   → s1 ✓ 13.5s   s2 ✓ 7.5s</span>
-<span class="c"># › /save  → ✓ saved ./tactics/your-tactic.aet.yaml</span></pre>
+<span class="c"># request →</span> <span class="v">contact@contextjemo.com</span></pre>
           </div>
           <div class="art-foot">
-            <span class="small mono">No API key required to try</span>
-            <span class="trace">#README-QS</span>
+            <span class="small mono">Open-layer release follows the §6 clause schedule</span>
+            <span class="trace">#CTX-BOUNDARY</span>
           </div>
         </div>
       </div>
@@ -338,12 +337,12 @@
       we'll turn it into a tactic and show you what it costs, step by step.
     </p>
     <div class="cta-actions rv rv-d3">
-      <a class="btn btn--solid" href="https://github.com/xingkongxia1988/contextjemo">
-        Get the code
+      <a class="btn btn--solid" href="mailto:contact@contextjemo.com?subject=ContextJemo%20complete%20edition">
+        Request the complete edition
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
       </a>
+      <a class="btn btn--ghost" href="#open">Open boundary</a>
       <a class="btn btn--ghost" href="https://xingkongxia1988.github.io/shuopu-site/">Company site</a>
-      <a class="btn btn--ghost" href="mailto:contact@contextjemo.com">contact@contextjemo.com</a>
     </div>
   </div>
 </section>
@@ -365,7 +364,7 @@
         <a href="#semantic-layer">Semantic layer</a>
         <a href="#files">The files</a>
         <a href="#lifecycle">Lifecycle</a>
-        <a href="#open">Open source</a>
+        <a href="#open">Open Boundary</a>
       </div>
       <div class="foot-col">
         <h5>Company</h5>

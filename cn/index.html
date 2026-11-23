@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ContextJemo — AI 工作的语义层 | 会复利的提示词</title>
-<meta name="description" content="ContextJemo 是 AI 工作的语义层。把团队的打法变成 Agent 真正执行的可执行文件——声明式、可验证、可复制。便宜模型就够。">
+<meta name="description" content="ContextJemo 是 AI 工作的语义层。把团队的打法变成 Agent 真正执行的可执行文件——声明式、可验证、可复制。价值在结构，不在模型强弱。">
 <meta name="theme-color" content="#060B11">
 <meta property="og:title" content="ContextJemo — AI 工作的语义层">
 <meta property="og:description" content="把团队的打法变成 Agent 真正执行的可执行文件。">
@@ -29,7 +29,7 @@
       <a href="#files">两种文件</a>
       <a href="#blackbox">对比黑盒</a>
       <a href="#lifecycle">生命周期</a>
-      <a href="#open">开源</a>
+      <a href="#open">开源边界</a>
       <a class="nav-mobile-cta" href="#start">开始使用 →</a>
     </nav>
     <a class="nav-lang" href="../" lang="en" hreflang="en" aria-label="English version">EN</a>
@@ -44,14 +44,14 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow rv">AI 工作的语义层 · Apache-2.0 开源</div>
+      <div class="eyebrow rv">AI 工作的语义层 · 开放格式，完整运行</div>
       <h1 class="h-display rv rv-d1">团队的打法，<br>变成 Agent <span class="hl">真正执行</span><br>的那份文件</h1>
       <p class="hero-sub rv rv-d2">
         提示词是被读取的，打法是被执行的。ContextJemo 把团队实际的工作方式，
         变成 Agent 会跑、人能审、git 能追的声明式文件——
         <strong style="color:var(--text-2)">AET 战术文件</strong>与
         <strong style="color:var(--text-2)">内核 MD</strong>。
-        靠结构而非模型强度，便宜模型就够用。
+        价值在结构，不在模型强弱：同一份文件，谁来跑都跑出同一个结果，跑完都能查。
       </p>
       <div class="hero-actions rv rv-d3">
         <a class="btn btn--solid" href="#start">
@@ -59,7 +59,7 @@
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
         </a>
         <a class="btn btn--ghost" href="#files">看文件长什么样</a>
-        <a class="btn btn--ghost" href="https://github.com/xingkongxia1988/contextjemo">GitHub</a>
+        <a class="btn btn--ghost" href="#open">开源边界</a>
       </div>
       <div class="hero-note rv rv-d3">
         <span class="trace">#CTX-001</span>
@@ -280,22 +280,23 @@
   <div class="wrap">
     <div class="split split--rev">
       <div>
-        <div class="eyebrow rv">05 · 开源</div>
-        <h2 class="h2 rv rv-d1" style="margin-top:20px">先有文件，<br>再有平台。</h2>
+        <div class="eyebrow rv">05 · 开源边界</div>
+        <h2 class="h2 rv rv-d1" style="margin-top:20px">开放的是格式，<br>完整的是运行。</h2>
         <p class="lead rv rv-d2" style="margin-top:24px">
-          仓库是 Apache-2.0。格式有文档。AET spec v1.0 已冻结，
-          而「何时独立开源」的触发条件是写下来的条款，不是 aspiration。
+          AET 规范 v1.0 已冻结，但<strong style="color:var(--text)">尚未独立开源</strong>——
+          独立开源的触发条件写在 spec §六，是条款不是形容词。
+          我们不整仓开源：让人接得上的那层会公开，跑起来要的那层以完整版交付。
         </p>
         <div class="cta-actions rv rv-d3">
-          <a class="btn btn--solid" href="https://github.com/xingkongxia1988/contextjemo">
-            去看 GitHub
+          <a class="btn btn--solid" href="mailto:contact@contextjemo.com?subject=ContextJemo%20%E5%AE%8C%E6%95%B4%E7%89%88%E7%94%B3%E8%AF%B7">
+            申请完整版
             <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
           </a>
-          <a class="btn btn--ghost" href="#start">本地装一个</a>
+          <a class="btn btn--ghost" href="#files">看两种文件</a>
         </div>
         <div class="hero-note rv rv-d3">
-          <span class="trace">#SCOPE-OPEN</span>
-          <span class="small">本仓库为原型级能力——原型跑通了，不等于有 traction。</span>
+          <span class="trace">#CTX-BOUNDARY</span>
+          <span class="small">边界写下来，才谈信任——开放层按条款推进，完整版以商业授权交付。</span>
         </div>
       </div>
 
@@ -303,22 +304,20 @@
         <div class="art">
           <div class="art-head">
             <div class="art-dots"><i></i><i></i><i></i></div>
-            <span class="art-path">快速开始</span>
+            <span class="art-path">获取路径 · ACCESS</span>
           </div>
           <div class="art-body">
-<pre><span class="c"># Node ≥ 22</span>
-<span class="k">git clone</span> <span class="v">https://github.com/xingkongxia1988/contextjemo</span>
-<span class="k">cd</span> contextjemo &amp;&amp; <span class="k">pnpm install</span>
+<pre><span class="c"># 开放层 · Apache-2.0（独立仓发布中）</span>
+<span class="k">规范</span> <span class="k">schema</span> <span class="k">解析与校验</span> <span class="k">lint</span> <span class="k">模板库</span>
 
-<span class="c"># 对话模式——说人话就行</span>
-<span class="k">npm run</span> <span class="v">chat</span>
+<span class="c"># 完整版 · 商业授权 / 私有化</span>
+<span class="k">编排</span> <span class="k">门禁</span> <span class="k">审计</span> <span class="k">记忆</span> <span class="k">成本路由</span> <span class="k">Studio</span>
 
-<span class="c"># › /run   → s1 ✓ 13.5s   s2 ✓ 7.5s</span>
-<span class="c"># › /save  → ✓ saved ./tactics/your-tactic.aet.yaml</span></pre>
+<span class="c"># 申请 →</span> <span class="v">contact@contextjemo.com</span></pre>
           </div>
           <div class="art-foot">
-            <span class="small mono">无 API Key 也能先跑通</span>
-            <span class="trace">#README-QS</span>
+            <span class="small mono">开放层发布进度按 spec §六 条款推进</span>
+            <span class="trace">#CTX-BOUNDARY</span>
           </div>
         </div>
       </div>
@@ -336,12 +335,12 @@
       我们把它变成一份战术，逐步给你看它的成本。
     </p>
     <div class="cta-actions rv rv-d3">
-      <a class="btn btn--solid" href="https://github.com/xingkongxia1988/contextjemo">
-        拿走代码
+      <a class="btn btn--solid" href="mailto:contact@contextjemo.com?subject=ContextJemo%20%E5%AE%8C%E6%95%B4%E7%89%88%E7%94%B3%E8%AF%B7">
+        申请完整版
         <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 8h11M9 3.5 13.5 8 9 12.5"/></svg>
       </a>
+      <a class="btn btn--ghost" href="#open">开源边界</a>
       <a class="btn btn--ghost" href="https://xingkongxia1988.github.io/shuopu-site/">公司官网</a>
-      <a class="btn btn--ghost" href="mailto:contact@contextjemo.com">contact@contextjemo.com</a>
     </div>
   </div>
 </section>
@@ -363,7 +362,7 @@
         <a href="#semantic-layer">语义层</a>
         <a href="#files">两种文件</a>
         <a href="#lifecycle">生命周期</a>
-        <a href="#open">开源</a>
+        <a href="#open">开源边界</a>
       </div>
       <div class="foot-col">
         <h5>公司</h5>
